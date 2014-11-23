@@ -1,10 +1,12 @@
 ## Pair of functions that create a list structure to enable caching of a
 ##  computed matrix inverse
+##  Adapted from makeVector and cachemean examples from homework assignment
 
 ## Create a list object that stores and accesses an inverse to the supplied
 ##  matrix
 
 makeCacheMatrix <- function(x = matrix()) {
+    #define member functions
     mi <- NULL
     set <- function(y) {
         x <<- y
@@ -13,6 +15,7 @@ makeCacheMatrix <- function(x = matrix()) {
     get <- function() x
     setinv <- function(inv) mi <<- inv
     getinv <- function() mi
+    # create list object with functions as elements
     list(set=set, get=get, setinv=setinv, getinv=getinv)
 }
 
